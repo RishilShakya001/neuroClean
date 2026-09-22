@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+web_ui/node_modules/
+package-lock.json
+
+# Build and distribution
+dist/
+web_ui/dist/
+build/
+
+# MATLAB temporary files
+*.asv
+*.m~
+*.slxc
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+
+# Temporary recordings
+Interactive_UI/temp_recording.wav

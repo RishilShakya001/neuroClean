@@ -1,0 +1,2 @@
+bin_label_1,bin_label_2,bin_label_3,n_files_1,n_files_2,n_files_3,avg_input_snr_1,avg_input_snr_2,avg_input_snr_3,avg_output_snr_1,avg_output_snr_2,avg_output_snr_3,avg_snr_improvement_1,avg_snr_improvement_2,avg_snr_improvement_3,avg_stoi_improvement_1,avg_stoi_improvement_2,avg_stoi_improvement_3
+Low (-5 to 0dB),Medium (0-5dB),High (5-10dB),1,1,1,-0.510545606212092,1.0477116256261,6.00628078945269,-2.09164827920174,-4.60348009337147,4.84679557120569,-1.58110267298965,-5.65119171899756,-1.15948521824701,NaN,NaN,NaN

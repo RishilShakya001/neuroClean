@@ -1,0 +1,877 @@
+compute_evaluation_metrics.m
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 1000 WAV files found
+Noise folder: 1000 WAV files found
+Combined folder: 1000 WAV files found
+Postprocessed (Denoised) folder: 1000 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 1000 denoised audio files.
+
+[1/1000] Evaluating files...
+[100/1000] Evaluating files...
+[200/1000] Evaluating files...
+[300/1000] Evaluating files...
+[400/1000] Evaluating files...
+[500/1000] Evaluating files...
+[600/1000] Evaluating files...
+[700/1000] Evaluating files...
+[800/1000] Evaluating files...
+[900/1000] Evaluating files...
+[1000/1000] Evaluating files...
+
+Evaluation file processing complete!
+  Successful: 987, Failed: 0, Skipped: 13
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         -0.38 \pm 4.14 dB
+  Output:        10.49 \pm 1.28 dB
+  Improvement:   10.87 \pm 4.29 dB (358.6% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  0.878 \pm 0.057
+  Output: 0.919 \pm 0.037
+  Improvement: 0.041 \pm 0.035
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -11.82 dB
+  Max Input SNR: 12.56 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (22.90 dB): p255_063_mic2_seg1_with_frk_7yYU4WY_Predicted.wav
+  #2 (20.88 dB): p255_045_mic2_seg1_with_f_PpcxH8CvQ_Predicted.wav
+  #3 (20.69 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #4 (19.74 dB): p250_130_mic1_seg1_with_aGYNhYvSNQc_Predicted.wav
+  #5 (19.64 dB): p250_149_mic1_seg1_with_aVh_yWnaOEk_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-3.73 dB): p255_082_mic1_seg1_with_g4FcGtHt9Qc_Predicted.wav
+  #2 (-2.31 dB): p250_367_mic1_seg1_with_dWl_VWyCbAc_Predicted.wav
+  #3 (-2.18 dB): p250_164_mic1_seg1_with_al6llHInq94_Predicted.wav
+  #4 (-1.91 dB): p250_367_mic2_seg1_with_dWxYZr87ir8_Predicted.wav
+  #5 (-1.67 dB): p250_143_mic1_seg1_with_aQ6IVN5Yvzo_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (0.188): p250_245_mic2_seg1_with_bonn99q7Yhk_Predicted.wav
+  #2 (0.176): p250_453_mic2_seg1_with_e_u3CC6avt8_Predicted.wav
+  #3 (0.173): p255_147_mic2_seg1_with_h2YbVCVWvHM_Predicted.wav
+  #4 (0.167): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #5 (0.167): p250_263_mic1_seg1_with_c6qzNUxSgWM_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (-0.091): p250_147_mic1_seg1_with_aT6bc2MM0Xg_Predicted.wav
+  #2 (-0.083): p250_204_mic2_seg1_with_bM_Y-rFPpHc_Predicted.wav
+  #3 (-0.049): p255_075_mic1_seg1_with_g0FVCv-v4p0_Predicted.wav
+  #4 (-0.034): p250_127_mic2_seg1_with_aEWZULHRlPY_Predicted.wav
+  #5 (-0.027): p255_121_mic1_seg1_with_gc-2PpRZS5Q_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Very Low (<-5dB): 109 files
+  Avg Input SNR:        -6.47 dB
+  Avg Output SNR:       10.27 dB
+  Avg SNR Improvement:  16.74 dB
+  Avg STOI Improvement: 0.044
+
+Low (-5 to 0dB): 483 files
+  Avg Input SNR:        -2.32 dB
+  Avg Output SNR:       10.53 dB
+  Avg SNR Improvement:  12.85 dB
+  Avg STOI Improvement: 0.041
+
+Medium (0-5dB): 282 files
+  Avg Input SNR:        2.00 dB
+  Avg Output SNR:       10.49 dB
+  Avg SNR Improvement:  8.49 dB
+  Avg STOI Improvement: 0.043
+
+High (5-10dB): 98 files
+  Avg Input SNR:        7.34 dB
+  Avg Output SNR:       10.53 dB
+  Avg SNR Improvement:  3.18 dB
+  Avg STOI Improvement: 0.036
+
+Very High (>10dB): 15 files
+  Avg Input SNR:        10.63 dB
+  Avg Output SNR:       10.09 dB
+  Avg SNR Improvement:  -0.54 dB
+  Avg STOI Improvement: 0.020
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              generate_evaulation_report.m
+=== Visualization Script ===
+Date: 03-Dec-2025 13:51:53
+
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+
+========================================
+STEP 5: GENERATING VISUALIZATIONS
+========================================
+Creating Figure 1: Distribution Comparison...
+  ✓ Saved: distribution_comparison.png
+Creating Figure 2: Stratified Performance...
+[Warning: Exported image displays axes toolbar. To remove axes toolbar from image, export again.] 
+  ✓ Saved: stratified_performance.png
+Creating Figure 3: Improvement Analysis...
+  ✓ Saved: improvement_analysis.png
+Creating Figure 4: Input vs Output Comparison...
+  ✓ Saved: input_vs_output_scatter.png
+Creating Figure 5: Per-File Improvements...
+[Warning: Exported image displays axes toolbar. To remove axes toolbar from image, export again.] 
+  ✓ Saved: per_file_improvements.png
+
+========================================
+STEP 6: STATISTICAL SIGNIFICANCE TESTS
+========================================
+
+--- SNR Paired t-test ---
+Null hypothesis: No difference between input and output SNR
+Result: REJECT null hypothesis (p = 0.0000)
+Conclusion: SNR improvement is STATISTICALLY SIGNIFICANT
+Mean improvement: 10.87 dB
+95% Confidence Interval: [10.60, 11.14] dB
+t-statistic: 79.5612, df: 986
+Effect size (Cohen's d): 3.549 (Large effect)
+
+--- STOI Paired t-test ---
+Null hypothesis: No difference between input and output STOI
+Result: REJECT null hypothesis (p = -0.0003)
+Result: REJECT null hypothesis (p = 0.0407)
+Conclusion: STOI improvement is STATISTICALLY SIGNIFICANT
+Mean improvement: 0.0408
+95% Confidence Interval: [0.0386, 0.0430]
+t-statistic: 36.1677, df: 986
+Effect size (Cohen's d): 0.850 (Large effect)
+
+========================================
+STEP 7: PRACTICAL SIGNIFICANCE ANALYSIS
+========================================
+
+Files showing improvement:
+  SNR:  972/987 (98.5%)
+  STOI: 893/987 (90.5%)
+
+Files exceeding Just Noticeable Difference (JND):
+  SNR (> 3.0 dB):  932/987 (94.4%)
+  STOI (> 0.05):    327/987 (33.1%)
+
+--- Overall Assessment ---
+Model shows PRACTICALLY SIGNIFICANT improvement in SNR
+  Model improvement in STOI may not be practically significant
+
+========================================
+KEY FINDINGS SUMMARY
+========================================
+
+=== SCALE-INVARIANT METRIC (STOI) ===
+Files improved: 90.5%
+Mean improvement: 0.041
+
+=== SNR METRIC (varies with mixing) ===
+  Files improved: 98.5%
+  Mean improvement: 10.87 dB (358.6% relative)
+  Input SNR range: -11.82 to 12.56 dB
+  Note: See stratified analysis for performance by input level
+
+=== RECOMMENDATION ===
+Model demonstrates ROBUST improvement across varying noise conditions
+STOI improvements indicate enhanced speech intelligibility
+
+========================================
+EVALUATION PIPELINE COMPLETE!
+========================================
+Total files processed: 987
+Results saved to: TEST-RESULTS-FINAL
+
+Generated files:
+  - evaluation_results.csv (Data Log)
+  - stratified_results.csv (Data Log)
+  - plotting_data.mat (Data for Plots)
+  - distribution_comparison.png
+  - stratified_performance.png
+  - improvement_analysis.png
+  - input_vs_output_scatter.png
+  - per_file_improvements.png
+
+Date completed: 03-Dec-2025 13:52:02
+========================================
+
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 3 WAV files found
+Noise folder: 3 WAV files found
+Combined folder: 3 WAV files found
+Postprocessed (Denoised) folder: 3 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 3 denoised audio files.
+
+[1/3] Evaluating files...
+STOI calculation failed for first file. Subsequent STOI results may be NaN.
+
+Evaluation file processing complete!
+  Successful: 3, Failed: 0, Skipped: 0
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         2.18 \pm 3.40 dB
+  Output:        -0.62 \pm 4.89 dB
+  Improvement:   -2.80 \pm 2.48 dB (-132.4% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  NaN \pm NaN
+  Output: NaN \pm NaN
+  Improvement: NaN \pm NaN
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -0.51 dB
+  Max Input SNR: 6.01 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Low (-5 to 0dB): 1 files
+  Avg Input SNR:        -0.51 dB
+  Avg Output SNR:       -2.09 dB
+  Avg SNR Improvement:  -1.58 dB
+  Avg STOI Improvement: NaN
+
+Medium (0-5dB): 1 files
+  Avg Input SNR:        1.05 dB
+  Avg Output SNR:       -4.60 dB
+  Avg SNR Improvement:  -5.65 dB
+  Avg STOI Improvement: NaN
+
+High (5-10dB): 1 files
+  Avg Input SNR:        6.01 dB
+  Avg Output SNR:       4.85 dB
+  Avg SNR Improvement:  -1.16 dB
+  Avg STOI Improvement: NaN
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+{ttest requires Statistics and Machine Learning Toolbox.
+
+Error in generate_evaluation_report (line 43)
+    [h_snr, p_snr, ci_snr, stats_snr] = ttest(results.SNR_output, results.SNR_input);
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run_synthetic_verification (line 108)
+run('generate_evaluation_report.m');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 3 WAV files found
+Noise folder: 3 WAV files found
+Combined folder: 3 WAV files found
+Postprocessed (Denoised) folder: 3 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 3 denoised audio files.
+
+[1/3] Evaluating files...
+STOI calculation failed for first file. Subsequent STOI results may be NaN.
+
+Evaluation file processing complete!
+  Successful: 3, Failed: 0, Skipped: 0
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         2.18 \pm 3.40 dB
+  Output:        -0.62 \pm 4.89 dB
+  Improvement:   -2.80 \pm 2.48 dB (-132.4% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  NaN \pm NaN
+  Output: NaN \pm NaN
+  Improvement: NaN \pm NaN
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -0.51 dB
+  Max Input SNR: 6.01 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Low (-5 to 0dB): 1 files
+  Avg Input SNR:        -0.51 dB
+  Avg Output SNR:       -2.09 dB
+  Avg SNR Improvement:  -1.58 dB
+  Avg STOI Improvement: NaN
+
+Medium (0-5dB): 1 files
+  Avg Input SNR:        1.05 dB
+  Avg Output SNR:       -4.60 dB
+  Avg SNR Improvement:  -5.65 dB
+  Avg STOI Improvement: NaN
+
+High (5-10dB): 1 files
+  Avg Input SNR:        6.01 dB
+  Avg Output SNR:       4.85 dB
+  Avg SNR Improvement:  -1.16 dB
+  Avg STOI Improvement: NaN
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+
+========================================
+STEP 5: GENERATING VISUALIZATIONS
+========================================
+Creating Figure 1: Distribution Comparison...
+{boxplot requires one of the following:
+  SimBiology
+  Statistics and Machine Learning Toolbox
+
+Error in generate_evaluation_report (line 94)
+h_box1 = boxplot([results.SNR_input', results.SNR_output'], ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run_synthetic_verification (line 108)
+run('generate_evaluation_report.m');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 3 WAV files found
+Noise folder: 3 WAV files found
+Combined folder: 3 WAV files found
+Postprocessed (Denoised) folder: 3 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 3 denoised audio files.
+
+[1/3] Evaluating files...
+STOI calculation failed for first file. Subsequent STOI results may be NaN.
+
+Evaluation file processing complete!
+  Successful: 3, Failed: 0, Skipped: 0
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         2.18 \pm 3.40 dB
+  Output:        -0.62 \pm 4.89 dB
+  Improvement:   -2.80 \pm 2.48 dB (-132.4% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  NaN \pm NaN
+  Output: NaN \pm NaN
+  Improvement: NaN \pm NaN
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -0.51 dB
+  Max Input SNR: 6.01 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Low (-5 to 0dB): 1 files
+  Avg Input SNR:        -0.51 dB
+  Avg Output SNR:       -2.09 dB
+  Avg SNR Improvement:  -1.58 dB
+  Avg STOI Improvement: NaN
+
+Medium (0-5dB): 1 files
+  Avg Input SNR:        1.05 dB
+  Avg Output SNR:       -4.60 dB
+  Avg SNR Improvement:  -5.65 dB
+  Avg STOI Improvement: NaN
+
+High (5-10dB): 1 files
+  Avg Input SNR:        6.01 dB
+  Avg Output SNR:       4.85 dB
+  Avg SNR Improvement:  -1.16 dB
+  Avg STOI Improvement: NaN
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+
+========================================
+STEP 5: GENERATING VISUALIZATIONS
+========================================
+Creating Figure 1: Distribution Comparison...
+  ✓ Saved: distribution_comparison.png
+Creating Figure 2: Stratified Performance...
+{Incorrect number or types of inputs or outputs for function range.
+
+Error in generate_evaluation_report (line 157)
+    r = range(vals);
+    ^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run_synthetic_verification (line 108)
+run('generate_evaluation_report.m');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 3 WAV files found
+Noise folder: 3 WAV files found
+Combined folder: 3 WAV files found
+Postprocessed (Denoised) folder: 3 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 3 denoised audio files.
+
+[1/3] Evaluating files...
+STOI calculation failed for first file. Subsequent STOI results may be NaN.
+
+Evaluation file processing complete!
+  Successful: 3, Failed: 0, Skipped: 0
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         2.18 \pm 3.40 dB
+  Output:        -0.62 \pm 4.89 dB
+  Improvement:   -2.80 \pm 2.48 dB (-132.4% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  NaN \pm NaN
+  Output: NaN \pm NaN
+  Improvement: NaN \pm NaN
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -0.51 dB
+  Max Input SNR: 6.01 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Low (-5 to 0dB): 1 files
+  Avg Input SNR:        -0.51 dB
+  Avg Output SNR:       -2.09 dB
+  Avg SNR Improvement:  -1.58 dB
+  Avg STOI Improvement: NaN
+
+Medium (0-5dB): 1 files
+  Avg Input SNR:        1.05 dB
+  Avg Output SNR:       -4.60 dB
+  Avg SNR Improvement:  -5.65 dB
+  Avg STOI Improvement: NaN
+
+High (5-10dB): 1 files
+  Avg Input SNR:        6.01 dB
+  Avg Output SNR:       4.85 dB
+  Avg SNR Improvement:  -1.16 dB
+  Avg STOI Improvement: NaN
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+
+========================================
+STEP 5: GENERATING VISUALIZATIONS
+========================================
+Creating Figure 1: Distribution Comparison...
+  ✓ Saved: distribution_comparison.png
+Creating Figure 2: Stratified Performance...
+{Error using ylim (line 37)
+Limits must be a 2-element vector of increasing numeric values.
+
+Error in generate_evaluation_report (line 186)
+    ylim([max(0, stoi_imp_min - 0.2*stoi_imp_range), stoi_imp_max + 0.2*stoi_imp_range]);
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 112)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run_synthetic_verification (line 108)
+run('generate_evaluation_report.m');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+
+========================================
+STEP 1: VERIFYING INPUT DATA
+========================================
+Clean folder: 3 WAV files found
+Noise folder: 3 WAV files found
+Combined folder: 3 WAV files found
+Postprocessed (Denoised) folder: 3 WAV files found
+
+========================================
+STEP 2: COMPUTING EVALUATION METRICS
+========================================
+Found 3 denoised audio files.
+
+[1/3] Evaluating files...
+STOI calculation failed for first file. Subsequent STOI results may be NaN.
+
+Evaluation file processing complete!
+  Successful: 3, Failed: 0, Skipped: 0
+
+========================================
+STEP 3: COMPUTING SUMMARY STATISTICS
+========================================
+
+=== AVERAGE METRICS ===
+SNR:
+  Input:         2.18 \pm 3.40 dB
+  Output:        -0.62 \pm 4.89 dB
+  Improvement:   -2.80 \pm 2.48 dB (-132.4% relative improvement)
+
+STOI (Scale-Invariant):
+  Input:  NaN \pm NaN
+  Output: NaN \pm NaN
+  Improvement: NaN \pm NaN
+
+=== INPUT SNR RANGE ===
+  Min Input SNR: -0.51 dB
+  Max Input SNR: 6.01 dB
+
+=== BEST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+
+=== WORST 5 SNR IMPROVEMENTS (dB) ===
+  #1 (-5.65 dB): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #2 (-1.58 dB): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #3 (-1.16 dB): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== BEST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+
+=== WORST 5 STOI IMPROVEMENTS ===
+  #1 (NaN): p255_055_mic2_seg1_with_fkPoNQzfdRI_Predicted.wav
+  #2 (NaN): p250_414_mic2_seg1_with_e7l0nmb0I3s_Predicted.wav
+  #3 (NaN): p250_401_mic2_seg1_with_duQjL_OBym4_Predicted.wav
+
+Results saved to:
+  - TEST-RESULTS-FINAL\evaluation_results.csv
+
+========================================
+STEP 4: STRATIFIED ANALYSIS BY INPUT SNR
+========================================
+
+Low (-5 to 0dB): 1 files
+  Avg Input SNR:        -0.51 dB
+  Avg Output SNR:       -2.09 dB
+  Avg SNR Improvement:  -1.58 dB
+  Avg STOI Improvement: NaN
+
+Medium (0-5dB): 1 files
+  Avg Input SNR:        1.05 dB
+  Avg Output SNR:       -4.60 dB
+  Avg SNR Improvement:  -5.65 dB
+  Avg STOI Improvement: NaN
+
+High (5-10dB): 1 files
+  Avg Input SNR:        6.01 dB
+  Avg Output SNR:       4.85 dB
+  Avg SNR Improvement:  -1.16 dB
+  Avg STOI Improvement: NaN
+
+Stratified results saved to: TEST-RESULTS-FINAL\stratified_results.csv
+
+
+--- DATA SAVED SUCCESSFULLY ---
+Plotting data saved to: TEST-RESULTS-FINAL\plotting_data.mat
+Run "plotting_script.m" to generate figures and final log.
+Loading data from: TEST-RESULTS-FINAL\plotting_data.mat
+
+========================================
+STEP 5: GENERATING VISUALIZATIONS
+========================================
+Creating Figure 1: Distribution Comparison...
+  ✓ Saved: distribution_comparison.png
+Creating Figure 2: Stratified Performance...
+  ✓ Saved: stratified_performance.png
+Creating Figure 3: Improvement Analysis...
+[Warning: Error in state of SceneNode.
+Invalid RGB triplet. Specify a three-element vector of values between 0 and 1.
+] 
+[> In defaulterrorcallback (line 12)
+In matlab.graphics.illustration/ColorBar/get.Label
+In generate_evaluation_report (line 255)
+In run (line 112)
+In run_synthetic_verification (line 108)] 
+[Warning: Error in state of SceneNode.
+Invalid RGB triplet. Specify a three-element vector of values between 0 and 1.
+] 
+[> In defaulterrorcallback (line 12)
+In matlab.graphics.illustration.subplot/Text/get.SubplotAdjustment
+In matlab.graphics.internal.SubplotListenersManager>@(o,e)subplotlayout(ax,e,fig)
+In print (line 36)
+In saveas (line 181)
+In generate_evaluation_report (line 303)
+In run (line 112)
+In run_synthetic_verification (line 108)] 
+[Warning: Error in state of SceneNode.
+Invalid RGB triplet. Specify a three-element vector of values between 0 and 1.
+] 
+[> In defaulterrorcallback (line 12)
+In alternatePrintPath
+In alternatePrintPath
+In alternatePrintPath
+In print (line 90)
+In saveas (line 181)
+In generate_evaluation_report (line 303)
+In run (line 112)
+In run_synthetic_verification (line 108)] 
+[Warning: Error in state of SceneNode.
+Invalid RGB triplet. Specify a three-element vector of values between 0 and 1.
+] 
+[> In defaulterrorcallback (line 12)
+In matlab.graphics.illustration.subplot/Text/get.SubplotAdjustment
+In matlab.graphics.internal.SubplotListenersManager>@(o,e)subplotlayout(ax,e,fig)
+In matlab.graphics.internal/mlprintjob/setPaintDisabled
+In alternatePrintPath
+In alternatePrintPath
+In onCleanup/delete (line 25)
+In alternatePrintPath
+In print (line 90)
+In saveas (line 181)
+In generate_evaluation_report (line 303)
+In run (line 112)
+In run_synthetic_verification (line 108)] 
+  ✓ Saved: improvement_analysis.png
+Creating Figure 4: Input vs Output Comparison...
+[Warning: Ignoring extra legend entries.] 
+[> In legend>process_inputs (line 567)
+In legend>make_legend (line 294)
+In legend (line 245)
+In generate_evaluation_report (line 342)
+In run (line 112)
+In run_synthetic_verification (line 108)] 
+  ✓ Saved: input_vs_output_scatter.png
+Creating Figure 5: Per-File Improvements...
+  ✓ Saved: per_file_improvements.png
+
+========================================
+STEP 6: STATISTICAL SIGNIFICANCE TESTS
+========================================
+
+--- SNR Paired t-test ---
+Null hypothesis: No difference between input and output SNR
+Result: FAIL TO REJECT null hypothesis (p = 0.1900)
+Conclusion: SNR improvement is NOT statistically significant
+Mean improvement: -2.80 dB
+95% Confidence Interval: [-7.32, 1.73] dB
+t-statistic: -1.9532, df: 2
+Effect size (Cohen's d): -0.664 (Large effect)
+
+--- STOI Paired t-test ---
+Skipping STOI t-test (only 0 valid samples).
+
+========================================
+STEP 7: PRACTICAL SIGNIFICANCE ANALYSIS
+========================================
+
+Files showing improvement:
+  SNR:  0/3 (0.0%)
+  STOI: 0/3 (0.0%)
+
+Files exceeding Just Noticeable Difference (JND):
+  SNR (> 3.0 dB):  0/3 (0.0%)
+  STOI (> 0.05):    0/3 (0.0%)
+
+--- Overall Assessment ---
+  Model improvement in SNR may not be practically significant
+  Model improvement in STOI may not be practically significant
+
+========================================
+KEY FINDINGS SUMMARY
+========================================
+
+=== SCALE-INVARIANT METRIC (STOI) ===
+Files improved: 0.0%
+Mean improvement: NaN
+
+=== SNR METRIC (varies with mixing) ===
+  Files improved: 0.0%
+  Mean improvement: -2.80 dB (-132.4% relative)
+  Input SNR range: -0.51 to 6.01 dB
+  Note: See stratified analysis for performance by input level
+
+=== RECOMMENDATION ===
+  Model shows modest improvements; consider further training
+
+========================================
+EVALUATION PIPELINE COMPLETE!
+========================================
+Total files processed: 3
+Results saved to: TEST-RESULTS-FINAL
+
+Generated files:
+  - evaluation_results.csv (Data Log)
+  - stratified_results.csv (Data Log)
+  - plotting_data.mat (Data for Plots)
+  - distribution_comparison.png
+  - stratified_performance.png
+  - improvement_analysis.png
+  - input_vs_output_scatter.png
+  - per_file_improvements.png
+
+Date completed: 22-Aug-2026 22:44:15
+========================================
